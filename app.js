@@ -1,7 +1,5 @@
-const API_KEY = CONFIG.API_KEY;
-
-const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
-const FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast";
+const WEATHER_FUNCTION_URL =
+    "/.netlify/functions/weather";
 
 // ==============================
 // DOM ELEMENTS
@@ -195,7 +193,7 @@ const getWeather = async (city) => {
         showLoading();
 
         const url =
-            `${BASE_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric&lang=id`;
+    `${WEATHER_FUNCTION_URL}?city=${encodeURIComponent(city)}&type=weather`;
 
         const response = await fetch(url);
 
@@ -242,9 +240,8 @@ getForecast(data.name);
 
 const getForecast = async (city) => {
     try {
-        const url =
-            `${FORECAST_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric&lang=id`;
-
+       const url =
+    `${WEATHER_FUNCTION_URL}?city=${encodeURIComponent(city)}&type=forecast`;
         const response = await fetch(url);
 
         if (!response.ok) {
