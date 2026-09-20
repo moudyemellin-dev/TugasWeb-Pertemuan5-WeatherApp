@@ -46,6 +46,7 @@ Contoh:
 const CONFIG = {
     API_KEY: "YOUR_OPENWEATHER_API_KEY"
 };
+
 ## Live Demo
 
 [Buka Weather App](https://weather-app-moudy.netlify.app)
