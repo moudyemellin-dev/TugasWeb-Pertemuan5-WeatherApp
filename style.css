@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #74b9ff,
+            #0984e3
+        );
+
+    color: #2d3436;
+    transition: background 0.6s ease;
+}
+
+.weather-app {
+    width: 100%;
+    max-width: 430px;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.18);
+
+    text-align: center;
+}
+
+.weather-app h1 {
+    margin-bottom: 8px;
+
+    color: #0984e3;
+
+    font-size: 32px;
+}
+
+.subtitle {
+    margin-bottom: 25px;
+
+    color: #636e72;
+
+    font-size: 14px;
+}
+
+
+/* FORM */
+
+form {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    border: 1px solid #b2bec3;
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #0984e3;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(9, 132, 227, 0.15);
+}
+
+button {
+    padding: 12px 18px;
+
+    color: white;
+
+    background: #0984e3;
+
+    border: none;
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0873c4;
+}
+
+
+/* LOADING */
+
+#loading {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    color: #636e72;
+
+    background: #f1f2f6;
+
+    border-radius: 10px;
+}
+
+
+/* ERROR */
+
+#error {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    color: #c0392b;
+
+    background: #ffeaea;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+}
+
+
+/* WEATHER RESULT */
+
+#weatherResult {
+    margin-top: 20px;
+
+    padding: 24px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5fbff,
+            #eaf5ff
+        );
+
+    border-radius: 16px;
+}
+
+#cityName {
+    margin-bottom: 5px;
+
+    color: #2d3436;
+
+    font-size: 26px;
+}
+
+#weatherIcon {
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto;
+}
+
+.temperature {
+    margin-bottom: 8px;
+
+    color: #0984e3;
+
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#description {
+    margin-bottom: 8px;
+
+    font-size: 17px;
+
+    text-transform: capitalize;
+}
+
+#humidity {
+    color: #636e72;
+
+    font-size: 14px;
+}
+
+/* TOGGLE SUHU */
+
+.unit-toggle {
+    margin-top: 18px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.unit-toggle button {
+    width: 60px;
+
+    padding: 8px 12px;
+
+    color: #0984e3;
+
+    background: white;
+
+    border: 1px solid #0984e3;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.unit-toggle button:hover {
+    color: white;
+    background: #0984e3;
+}
+
+.unit-toggle button.active {
+    color: white;
+    background: #0984e3;
+}
+
+/* RIWAYAT PENCARIAN */
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+.history-header h3 {
+    margin-bottom: 0;
+}
+
+#clearHistoryBtn {
+    width: auto;
+
+    padding: 7px 11px;
+
+    color: #d63031;
+    background: #fff;
+
+    border: 1px solid #fab1a0;
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#clearHistoryBtn:hover {
+    color: #fff;
+    background: #d63031;
+}
+
+.history-section {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #dfe6e9;
+    text-align: left;
+}
+
+.history-section h3 {
+    margin-bottom: 12px;
+    color: #2d3436;
+    font-size: 16px;
+}
+
+#searchHistory {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.history-item {
+    padding: 7px 12px;
+    color: #0984e3;
+    background: #eaf5ff;
+    border: 1px solid #bde0ff;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.history-item:hover {
+    color: white;
+    background: #0984e3;
+}
+
+/* CLASS UNTUK MENYEMBUNYIKAN ELEMEN */
+
+.hidden {
+    display: none;
+}
+
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 14px;
+    }
+
+    .weather-app {
+        padding: 22px 18px;
+    }
+
+    .weather-app h1 {
+        font-size: 27px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    input,
+    button {
+        width: 100%;
+    }
+
+    .temperature {
+        font-size: 36px;
+    }
+}
+
+/* BACKGROUND SESUAI CUACA */
+
+body.weather-clear {
+    background: linear-gradient(135deg, #56ccf2, #2f80ed);
+}
+
+body.weather-clouds {
+    background: linear-gradient(135deg, #bdc3c7, #6c7a89);
+}
+
+body.weather-rain,
+body.weather-drizzle {
+    background: linear-gradient(135deg, #536976, #292e49);
+}
+
+body.weather-thunderstorm {
+    background: linear-gradient(135deg, #232526, #414345);
+}
+
+body.weather-mist {
+    background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+}
+
+body.weather-snow {
+    background: linear-gradient(135deg, #e6dada, #b8d8e8);
+}
+
+/* FORECAST 5 HARI */
+
+.forecast-section {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #dfe6e9;
+}
+
+.forecast-section h3 {
+    margin-bottom: 12px;
+    color: #2d3436;
+    font-size: 16px;
+    text-align: left;
+}
+
+.forecast-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.forecast-card {
+    padding: 10px 6px;
+
+    background: #f5f9fc;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.forecast-card p {
+    margin: 4px 0;
+    font-size: 12px;
+}
+
+.forecast-card img {
+    width: 45px;
+    height: 45px;
+}
+
+.forecast-temp {
+    font-weight: 700;
+    color: #0984e3;
+}
+
+@media (max-width: 480px) {
+    .forecast-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
