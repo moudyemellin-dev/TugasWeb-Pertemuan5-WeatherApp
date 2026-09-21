@@ -1,4 +1,4 @@
-# Weather App - Tugas Rutin 5
+# Tugas Rutin 5 Pemrograman Web Weather App 
 
 Weather App merupakan tugas Pemrograman Web yang menggunakan OpenWeatherMap API untuk menampilkan informasi cuaca berdasarkan nama kota.
 
