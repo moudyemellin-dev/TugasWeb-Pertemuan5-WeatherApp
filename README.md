@@ -1,4 +1,4 @@
-# Tugas Rutin 5 Pemrograman Web Weather App 
+# Tugas Rutin 5 Pemrograman Web - Weather App 
 
 Weather App merupakan tugas Pemrograman Web yang menggunakan OpenWeatherMap API untuk menampilkan informasi cuaca berdasarkan nama kota.
 
@@ -50,4 +50,4 @@ const CONFIG = {
 
 ## Live Demo
 
-[Buka Weather App](https://weather-app-moudy.netlify.app)
+🌐 [Buka Website Tugas 5 Weather App](https://weather-app-moudy.netlify.app)
